@@ -1,0 +1,75 @@
+<?php
+$pagina = "Agregar Cartas";
+
+if (!isset($_GET['deck_id']) || empty($_GET['deck_id'])) {
+    header('Location: index.php');
+    exit;
+}
+
+$deck_id = intval($_GET['deck_id']);
+
+require_once './layout/header.php';
+require_once './layout/navbar.php';
+?>
+
+<div class="main-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card border-0 shadow-lg rounded-4 bg-white fade-in-up mt-5 mb-5">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold" style="color: #00A86B;">Agregar Cartas al Mazo</h2>
+                        </div>
+
+                        <form id="formSubirCartas" enctype="multipart/form-data">
+                            <input type="hidden" id="deck_id_input" name="deck_id" value="<?= $deck_id ?>">
+
+                            <!-- /! todo hacer que no se pueden poner mas imagenes mas de 24 no*/ -->
+                            <div class="mb-4">
+                                <div class="drop-zone" id="dropZone">
+                                    <h5>Arrastra y suelta las imágenes aquí</h5>
+                                    <p class="text-muted mb-3">o haz clic para seleccionar</p>
+                                    <p class="small text-muted">Formatos soportados: JPG, PNG, GIF, WEBP</p>
+                                    <p class="small text-muted">Puede seleccionar múltiples imágenes a la vez</p>
+                                    <p class="small text-muted">máximo de imágenes: nose todavia</p>
+
+
+                                </div>
+                                <input type="file"
+                                    id="card_images"
+                                    name="card_images[]"
+                                    accept="image/*"
+                                    multiple
+                                    required
+                                    style="display: none;">
+                            </div>
+
+                            <div id="selectedCount" class="alert alert-success d-none mb-4">
+                                <strong><span id="countNumber">0</span></strong> carta(s) seleccionada(s)
+                            </div>
+
+                            <div id="previewContainer" class="cards-preview-grid mb-4"></div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit"
+                                    id="btnSubirCartas"
+                                    class="btn btn-lg"
+                                    style="background: #00A86B; color: white;"
+                                    disabled>
+                                    Guardar Cartas
+                                </button>
+                                <a href="index.php" class="btn btn-lg btn-outline-secondary">
+                                    Volver al Inicio
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php require_once './layout/footer.php'; ?>
+<script src="../ASSETS/js/agregarCartas.js"></script>
