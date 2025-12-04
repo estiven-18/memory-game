@@ -5,9 +5,12 @@
 $pagina = "Agregar Cartas";
 
 session_start();
-if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null || $_SESSION["rol"] != 'ADMIN') {
+if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null || $_SESSION["rol"] != 'admin') {
     header('location: ./login.php');
 }
+
+$deck_id = $_GET['deck_id'];
+
 
 require_once './layout/header.php';
 require_once './layout/navbar.php';
