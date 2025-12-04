@@ -3,7 +3,7 @@ $pagina = "Inicio";
 
 session_start();
 
-$rol=$_SESSION['rol'];
+$rol = $_SESSION['rol'];
 
 if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null) {
     header('location: ./login.php');
@@ -23,6 +23,14 @@ require_once './layout/navbar.php';
             <h1 class="display-3 fw-bold mb-3">
                 Juego de Memoria
             </h1>
+        </div>
+
+        <!-- //* LOGOUT -->
+        <div class="nav-item">
+            <a class="btn btn-danger btnLogout" href="../CONTROLLER/log_out.php">
+                <i class="bi bi-door-closed-fill"></i>
+                Cerrar Sesión
+            </a>
         </div>
 
         <!-- Grid de mazos -->
