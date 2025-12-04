@@ -1,15 +1,15 @@
-
 let datosMazo = null;
-const idMazo = new URLSearchParams(window.location.search).get('deck_id');
+//* cambiar
+const idMazo = new URLSearchParams(window.location.search).get("deck_id");
 
-$(document).ready(function() {
-    cargarMazo();
-    
-    //* evento para eliminar mazo
-    $(document).on('click', '.btnEliminarMazo', function() {
-        const mazoId = $(this).data('id');
-        eliminarMazo(mazoId);
-    });
+$(document).ready(function () {
+  cargarMazo();
+
+  //* evento para eliminar mazo
+  $(document).on("click", ".btnEliminarMazo", function () {
+    const mazoId = $(this).data("id");
+    eliminarMazo(mazoId);
+  });
 });
 
 //* cargar mazo y sus cartas
@@ -24,20 +24,22 @@ function cargarMazo() {
         datosMazo = respuesta;
         mostrarMazo(respuesta.deck, respuesta.cards);
       } else {
-        Swal.fire('Error', respuesta.message, 'error');
+        Swal.fire("Error", respuesta.message, "error");
         setTimeout(() => {
           window.location.href = "index.php";
         }, 2000);
       }
     },
     error: function () {
-      Swal.fire('Error', 'No se pudo cargar el mazo', 'error');
+      Swal.fire("Error", "No se pudo cargar el mazo", "error");
       setTimeout(() => {
         window.location.href = "index.php";
       }, 2000);
     },
   });
 }
+
+
 
 //* mostrar mazo y sus detalles
 function mostrarMazo(mazo, cartas) {
@@ -56,8 +58,8 @@ function mostrarMazo(mazo, cartas) {
 function mostrarCartas(cartas) {
   const contenedor = $("#cardsContainer");
 
-    if (cartas.length === 0) {
-        contenedor.html(`
+  if (cartas.length === 0) {
+    contenedor.html(`
             <div class="col-12">
                 <div class="card border-0 shadow-lg rounded-4 bg-white">
                     <div class="card-body text-center py-5">
@@ -103,12 +105,12 @@ function eliminarMazo(mazoId) {
   }).then((resultado) => {
     if (resultado.isConfirmed) {
       Swal.fire({
-        title: 'Eliminando...',
-        html: 'Por favor espera',
+        title: "Eliminando...",
+        html: "Por favor espera",
         allowOutsideClick: false,
         didOpen: () => {
           Swal.showLoading();
-        }
+        },
       });
 
       $.ajax({
@@ -128,11 +130,11 @@ function eliminarMazo(mazoId) {
               window.location.href = "index.php";
             });
           } else {
-            Swal.fire('Error', respuesta.message, 'error');
+            Swal.fire("Error", respuesta.message, "error");
           }
         },
         error: function () {
-          Swal.fire('Error', 'No se pudo eliminar el mazo', 'error');
+          Swal.fire("Error", "No se pudo eliminar el mazo", "error");
         },
       });
     }

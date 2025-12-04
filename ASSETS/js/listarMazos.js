@@ -3,6 +3,16 @@ $(document).ready(function() {
     cargarMazos();
 });
 
+//* verificar si el usuario es player
+const rol = window.currentUser || null;
+const esPlayer =
+  rol &&
+  (rol.role === "jugador" ||
+    (Array.isArray(rol.roles) && rol.roles.includes("jugador")));
+    console.log(rol);
+
+   
+
 function cargarMazos() {
     $.ajax({
         url: '../CONTROLLER/listarMazos.php',

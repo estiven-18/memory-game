@@ -1,12 +1,13 @@
 <?php
+
+//* NO SE PUEDE ENTRAR SI NO ERES ADMIN
+
 $pagina = "Agregar Cartas";
 
-if (!isset($_GET['deck_id']) || empty($_GET['deck_id'])) {
-    header('Location: index.php');
-    exit;
+session_start();
+if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null || $_SESSION["rol"] != 'ADMIN') {
+    header('location: ./login.php');
 }
-
-$deck_id = intval($_GET['deck_id']);
 
 require_once './layout/header.php';
 require_once './layout/navbar.php';

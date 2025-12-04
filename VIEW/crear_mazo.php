@@ -1,5 +1,14 @@
 <?php
+
+//* NO SE PUEDE ENTRAR SI NO ERES ADMIN
+
 $pagina = "Crear Mazo";
+
+session_start();
+if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null || $_SESSION["rol"] != 'ADMIN') {
+    header('location: ./login.php');
+}
+
 require_once './layout/header.php';
 require_once './layout/navbar.php';
 ?>

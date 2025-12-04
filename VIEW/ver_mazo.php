@@ -1,12 +1,13 @@
 <?php
+
+//* NO SE PUEDE ENTRAR SI NO ERES ADMIN
+
 $pagina = "Ver Mazo";
 
-if (!isset($_GET['deck_id']) || empty($_GET['deck_id'])) {
-    header('Location: index.php');
-    exit;
+session_start();
+if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null || $_SESSION["rol"] != 'ADMIN') {
+    header('location: ./login.php');
 }
-
-$deck_id = $_GET['deck_id'];
 
 require_once './layout/header.php';
 require_once './layout/navbar.php';
@@ -21,7 +22,7 @@ require_once './layout/navbar.php';
             <div class="card-body p-4 p-md-5 text-center">
                 <h1 class="fw-bold mb-2" id="deckName" style="color: #00A86B;">Cargando...</h1>
                 <p class="text-muted mb-3" id="deckDescription"></p>
-                
+
                 <div class="row g-3 justify-content-center mb-4">
                     <div class="col-auto">
                         <div class="stat-box">
@@ -30,11 +31,11 @@ require_once './layout/navbar.php';
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="d-flex gap-2 justify-content-center flex-wrap">
-                    <a href="seleccionar_dificultad.php?deck_id=<?= $deck_id ?>" 
-                       id="btnJugar"
-                       class="btn btn-lg d-none" style="background: #00A86B; color: white;">
+                    <a href="seleccionar_dificultad.php?deck_id=<?= $deck_id ?>"
+                        id="btnJugar"
+                        class="btn btn-lg d-none" style="background: #00A86B; color: white;">
                         Jugar
                     </a>
                     <a href="agregar_cartas.php?deck_id=<?= $deck_id ?>" class="btn btn-lg" style="background: #00A86B; color: white;">
@@ -63,5 +64,3 @@ require_once './layout/navbar.php';
 
 <?php require_once './layout/footer.php'; ?>
 <script src="../ASSETS/js/verMazo.js"></script>
-
-

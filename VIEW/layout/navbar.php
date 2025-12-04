@@ -1,3 +1,11 @@
+<?php
+
+//* NO SE PUEDE ENTRAR SI NO ERES ADMIN
+
+$rol=$_SESSION['rol'];
+?>
+
+<?php if ($rol == 'admin') { ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary sticky-top shadow-sm h">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
@@ -25,3 +33,4 @@
         </div>
     </div>
 </nav>
+<?php } ?>
