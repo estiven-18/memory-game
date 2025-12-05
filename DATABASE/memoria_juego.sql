@@ -59,6 +59,7 @@ CREATE TABLE `partidas` (
   `id_mazo` int(11) NOT NULL,
   `dificultad` enum('facil','medio','dificil') NOT NULL,
   `puntaje_obtenido` int(11) NOT NULL DEFAULT 0,
+  `movimientos` int(11) NOT NULL DEFAULT 0,
   `fecha` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

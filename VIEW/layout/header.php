@@ -87,9 +87,9 @@
             color: white;
         }
         
-        .memory-card.matched .card-back {
-            background: #00A86B;
-            opacity: 0.6;
+        .memory-card.matched {
+            opacity: 5.0;
+            pointer-events: none;
         }
         
         .drop-zone {
