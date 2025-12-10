@@ -47,10 +47,10 @@ require_once './layout/navbar.php';
 
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-success">
-                                <i class="fas fa-save me-2"></i>Crear Administrador
+                                Crear Administrador
                             </button>
-                            <a href="administradores.php" class="btn btn-secondary">
-                                <i class="fas fa-arrow-left me-2"></i>Volver
+                            <a href="administradores.php" class="btn btn-danger">
+                                Volver
                             </a>
                         </div>
                     </form>

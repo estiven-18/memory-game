@@ -47,25 +47,3 @@
     font-size: 12px;
     font-weight: 600;
 }
-
-/* Estilo personalizado para DataTables */
-table.dataTable tbody tr {
-    transition: all 0.3s;
-}
-
-table.dataTable tbody tr:hover {
-    background-color: #f8f9fa;
-    transform: scale(1.01);
-}
-
-.dataTables_wrapper .dataTables_filter input {
-    border-radius: 20px;
-    padding: 8px 15px;
-    border: 1px solid #ddd;
-}
-
-.dataTables_wrapper .dataTables_length select {
-    border-radius: 8px;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-}

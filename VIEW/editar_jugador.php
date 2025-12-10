@@ -50,7 +50,7 @@ require_once './layout/navbar.php';
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow">
-                <div class="card-header bg-primary text-white">
+                <div class="card-header bg-success text-white">
                     <h4 class="mb-0"><i class="fas fa-user-edit me-2"></i>Editar Jugador</h4>
                 </div>
                 <div class="card-body">
@@ -73,11 +73,11 @@ require_once './layout/navbar.php';
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save me-2"></i>Guardar Cambios
+                            <button type="submit" class="btn btn-success">
+                                Guardar Cambios
                             </button>
-                            <a href="jugadores.php" class="btn btn-secondary">
-                                <i class="fas fa-arrow-left me-2"></i>Volver
+                            <a href="jugadores.php" class="btn btn-danger">
+                                Volver
                             </a>
                         </div>
                     </form>
