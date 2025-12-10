@@ -36,14 +36,14 @@ require_once './layout/navbar.php';
 
 <div class="administradores-container">
     <div class="container">
-        
-        
 
-        <div class="mb-3">
+
+
+        <!-- <div class="mb-3">
             <a class="btn btn-danger" href="../CONTROLLER/log_out.php">
                 <i class="fas fa-door-open"></i> Cerrar Sesión
             </a>
-        </div>
+        </div> -->
 
         <div class="card-datatable">
             <div class="d-flex justify-content-between mb-3">
@@ -52,7 +52,7 @@ require_once './layout/navbar.php';
                     <i class="fas fa-plus-circle me-1"></i>Nuevo Administrador
                 </a>
             </div>
-            
+
             <div class="table-responsive">
                 <table id="tablaAdministradores" class="table table-striped table-hover" style="width:100%">
                     <thead>

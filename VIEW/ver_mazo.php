@@ -47,8 +47,8 @@ require_once './layout/navbar.php';
                     <button class="btn btn-danger btn-lg btnEliminarMazo" data-id="<?= $deck_id ?>">
                         Eliminar
                     </button>
-                    <a href="index.php" class="btn btn-lg btn-outline-secondary">
-                        Inicio
+                    <a href="index.php" class="btn btn-lg" style="background: #0eefffff; color: white;">
+                        Volver al Inicio
                     </a>
                 </div>
             </div>

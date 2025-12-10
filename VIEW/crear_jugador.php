@@ -3,7 +3,7 @@ $pagina = "Crear Jugador";
 
 session_start();
 
-if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null ) {
+if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null) {
     header('location: ./login.php');
     exit();
 }
@@ -45,14 +45,14 @@ require_once './layout/navbar.php';
                             <input type="text" class="form-control" id="numero_ficha" placeholder="Número de ficha" required>
                         </div>
 
-                        
+
 
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-success">
                                 Crear Jugador
                             </button>
                             <a href="jugadores.php" class="btn btn-secondary">
-                               Volver
+                                Volver
                             </a>
                         </div>
                     </form>

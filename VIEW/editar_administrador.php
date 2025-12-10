@@ -56,7 +56,7 @@ require_once './layout/navbar.php';
                 <div class="card-body">
                     <form id="formEditarAdmin">
                         <input type="hidden" id="id" value="<?php echo $admin['id']; ?>">
-                        
+
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="nombre" value="<?php echo htmlspecialchars($admin['nombre']); ?>" required>

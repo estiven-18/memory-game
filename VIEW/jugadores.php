@@ -35,14 +35,14 @@ require_once './layout/navbar.php';
 
 <div class="usuarios-container">
     <div class="container">
-        
-       
 
-        <div class="mb-3">
+
+
+        <!-- <div class="mb-3">
             <a class="btn btn-danger" href="../CONTROLLER/log_out.php">
                 <i class="fas fa-door-open"></i> Cerrar Sesión
             </a>
-        </div>
+        </div> -->
 
         <div class="card-datatable">
             <div class="d-flex justify-content-between mb-3">
@@ -51,7 +51,7 @@ require_once './layout/navbar.php';
                     <i class="fas fa-plus-circle me-1"></i>Nuevo Jugador
                 </a>
             </div>
-            
+
             <div class="table-responsive">
                 <table id="tablaUsuarios" class="table table-striped table-hover" style="width:100%">
                     <thead>
@@ -70,7 +70,7 @@ require_once './layout/navbar.php';
                                 <td><?php echo $jugador['id']; ?></td>
                                 <td><?php echo htmlspecialchars($jugador['nombre']); ?></td>
                                 <td><?php echo htmlspecialchars($jugador['correo']); ?></td>
-                                <td><?php echo htmlspecialchars($jugador['numero_ficha']);?></td>
+                                <td><?php echo htmlspecialchars($jugador['numero_ficha']); ?></td>
                                 <td><?php echo $jugador['puntaje_total']; ?></td>
                                 <td>
                                     <a href="editar_jugador.php?id=<?php echo $jugador['id']; ?>" class="btn btn-primary btn-sm">

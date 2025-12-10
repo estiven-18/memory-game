@@ -3,7 +3,7 @@ $pagina = "Editar Jugador";
 
 session_start();
 
-if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null ) {
+if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null) {
     header('location: ./login.php');
     exit();
 }
@@ -56,7 +56,7 @@ require_once './layout/navbar.php';
                 <div class="card-body">
                     <form id="formEditarJugador">
                         <input type="hidden" id="id" value="<?php echo $jugador['id']; ?>">
-                        
+
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="nombre" value="<?php echo htmlspecialchars($jugador['nombre']); ?>" required>

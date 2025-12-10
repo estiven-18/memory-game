@@ -35,7 +35,7 @@ require_once './layout/navbar.php';
                                     name="name"
                                     maxlength="50"
                                     required>
-                                
+
                             </div>
 
                             <div class="mb-4">

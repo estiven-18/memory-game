@@ -25,7 +25,7 @@ $rol=$_SESSION['rol'];
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="crear_mazo.php">
+                    <a class="nav-link <?php echo ($pagina == 'Crear Mazo') ? 'active' : ''; ?>" href="crear_mazo.php">
                         Crear Mazo
                     </a>
                 </li>
@@ -41,6 +41,15 @@ $rol=$_SESSION['rol'];
                         Administradores
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../CONTROLLER/log_out.php">
+                        Cerrar Sesión
+                    </a>
+                </li>
+
+               
+            </a>
             </ul>
         </div>
     </div>
