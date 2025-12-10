@@ -78,7 +78,7 @@
     max-width: 200px;
     margin: 40px auto 0;
     padding: 12px 30px;
-    background: #95a5a6;
+    background: #e74c3c;
     color: white;
     text-align: center;
     border-radius: 8px;
@@ -87,6 +87,6 @@
 }
 
 .btn-volver:hover {
-    background: #7f8c8d;
+    background: #e74c3c;
     color: white;
 }

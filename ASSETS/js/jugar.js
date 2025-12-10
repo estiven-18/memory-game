@@ -268,15 +268,14 @@ function guardarPartida() {
 
 //* funcion para reiniciar el juego
 function reiniciarJuego() {
-    // Ocultar modal si está visible
+    
     const modal = document.getElementById('gameOverModal');
     modal.style.display = 'none';
     
-    // Reiniciar el juego
     iniciarJuego();
 }
 
-// // Función para volver al inicio
-// function volverInicio() {
-//     window.location.href = './index.php';
-// }
+//* función para volver al inicio
+function volverInicio() {
+    window.location.href = './index.php';
+}

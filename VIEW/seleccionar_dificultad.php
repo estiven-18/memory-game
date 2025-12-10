@@ -47,7 +47,7 @@ require_once './layout/navbar.php';
     </div>
 <!--cambiar la cantidad de lad caratssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
     <div class="niveles">
-        <!-- Nivel Fácil -->
+
         <a href="jugar.php?id_mazo=<?php echo $deck_id; ?>&dificultad=facil" class="nivel-card facil" id="btnFacil">
             <div class="nivel-titulo">Fácil</div>
             
@@ -73,7 +73,7 @@ require_once './layout/navbar.php';
         </a>
     </div>
 
-    <a href="index.php" class="btn-volver">← Volver al Inicio</a>
+    <a href="index.php" class="btn-volver"> Volver al Inicio</a>
 </div>
 
 <?php require_once './layout/footer.php'; ?>

@@ -56,7 +56,7 @@ require_once './layout/navbar.php';
                                     class="btn btn-lg" style="background: #00A86B; color: white;">
                                     Crear Mazo
                                 </button>
-                                <a href="index.php" class="btn btn-lg btn-outline-secondary">
+                                <a href="index.php" class="btn btn-lg btn-danger">
                                     Volver
                                 </a>
                             </div>
