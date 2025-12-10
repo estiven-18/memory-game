@@ -1,6 +1,6 @@
 <?php
 
-//* NO SE PUEDE ENTRAR SI NO ERES ADMIN
+//* NO SE PUEDE ENTRAR SI NO ERES ADMIN ""
 
 $pagina = "Agregar Cartas";
 
