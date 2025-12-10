@@ -29,6 +29,18 @@ $rol=$_SESSION['rol'];
                         Crear Mazo
                     </a>
                 </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link <?php echo ($pagina == 'Jugadores') ? 'active' : ''; ?>" href="jugadores.php">
+                        Jugadores
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link <?php echo ($pagina == 'Administradores') ? 'active' : ''; ?>" href="administradores.php">
+                        Administradores
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
