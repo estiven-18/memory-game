@@ -7,7 +7,9 @@
     <title>Registro - Juego de Memoria</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="../ASSETS/css/registro.css">
+
+    <!-- <style>
         body {
             background: linear-gradient(135deg, #ffffffff 0%, #ffffffff 100%);
             min-height: 100vh;
@@ -79,7 +81,7 @@
             margin: 0;
             color: #333;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>

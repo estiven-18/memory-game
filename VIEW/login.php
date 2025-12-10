@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Juego de Memoria</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="../ASSETS/css/login.css">
+
+    <!-- <style>
+
         body {
             background: linear-gradient(135deg, #f5f5f5ff 0%, #ffffffff 100%);
             min-height: 100vh;
@@ -65,8 +70,9 @@
             margin: 0;
             color: #333;
         }
-    </style>
+    </style> -->
 </head>
+
 <body>
     <div class="container">
         <div class="row justify-content-center">
@@ -108,7 +114,7 @@
                                 Iniciar Sesión
                             </button>
 
-                            
+
                             <div class="text-center mt-3" id="linkRegistro">
                                 <a href="registro.php" class="text-decoration-none" style="color: #00A86B;">¿No tienes cuenta? Regístrate</a>
                             </div>
@@ -122,4 +128,5 @@
     <?php require_once './layout/footer.php'; ?>
     <script src="../ASSETS/js/login.js"></script>
 </body>
+
 </html>
