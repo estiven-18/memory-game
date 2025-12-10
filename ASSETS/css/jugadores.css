@@ -1,0 +1,71 @@
+.usuarios-container {
+    padding: 30px 0;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.page-header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.page-header p {
+    margin: 10px 0 0 0;
+    opacity: 0.9;
+}
+
+.card-datatable {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Badge personalizado para roles */
+.badge-admin {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-jugador {
+    background: linear-gradient(135deg, #00A86B 0%, #008f5a 100%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Estilo personalizado para DataTables */
+table.dataTable tbody tr {
+    transition: all 0.3s;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01);
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border-radius: 20px;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+}

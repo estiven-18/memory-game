@@ -1,0 +1,92 @@
+.dificultad-container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo h1 {
+    color: #333;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.titulo p {
+    color: #666;
+    font-size: 18px;
+}
+
+.niveles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.nivel-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.nivel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+
+
+.nivel-icono {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.nivel-titulo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.nivel-descripcion {
+    font-size: 14px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.nivel-detalles {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.btn-volver {
+    display: block;
+    max-width: 200px;
+    margin: 40px auto 0;
+    padding: 12px 30px;
+    background: #95a5a6;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-volver:hover {
+    background: #7f8c8d;
+    color: white;
+}

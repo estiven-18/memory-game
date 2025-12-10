@@ -1,6 +1,6 @@
 <?php
 
-//* NO SE PUEDE ENTRAR SI NO ERES ADMIN ""
+//* NO SE PUEDE ENTRAR SI NO ERES ADMIN
 
 $pagina = "Agregar Cartas";
 
@@ -16,6 +16,8 @@ require_once './layout/header.php';
 require_once './layout/navbar.php';
 ?>
 
+<link rel="stylesheet" href="../ASSETS/css/agregar_cartas.css">
+
 <div class="main-container">
     <div class="container">
         <div class="row justify-content-center">
@@ -29,16 +31,12 @@ require_once './layout/navbar.php';
                         <form id="formSubirCartas" enctype="multipart/form-data">
                             <input type="hidden" id="deck_id_input" name="deck_id" value="<?= $deck_id ?>">
 
-                            <!-- /! todo hacer que no se pueden poner mas imagenes mas de 24 no*/ -->
                             <div class="mb-4">
                                 <div class="drop-zone" id="dropZone">
                                     <h5>Arrastra y suelta las imágenes aquí</h5>
                                     <p class="text-muted mb-3">o haz clic para seleccionar</p>
                                     <p class="small text-muted">Formatos soportados: JPG, PNG, GIF, WEBP</p>
                                     <p class="small text-muted">Puede seleccionar múltiples imágenes a la vez</p>
-                                    <p class="small text-muted">máximo de imágenes: nose todavia</p>
-
-
                                 </div>
                                 <input type="file"
                                     id="card_images"
@@ -53,7 +51,7 @@ require_once './layout/navbar.php';
                                 <strong><span id="countNumber">0</span></strong> carta(s) seleccionada(s)
                             </div>
 
-                            <div id="previewContainer" class="cards-preview-grid mb-4"></div>
+                            <div id="previewContainer" class="cards-preview-container mb-4"></div>
 
                             <div class="d-grid gap-2">
                                 <button type="submit"

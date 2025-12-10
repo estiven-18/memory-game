@@ -60,11 +60,11 @@ function prepararCartas() {
     
     //* Definir cantidad de parejas según dificultad
     if (dificultad === 'facil') {
-        cantidadParejas = 8; // 4x4 = 16 cartas (8 parejas)
+        cantidadParejas = 5; // 5 parejas = 10 cartas
     } else if (dificultad === 'medio') {
-        cantidadParejas = 8; // 4x4 = 16 cartas (8 parejas)
+        cantidadParejas = 8; // 8 parejas = 16 cartas
     } else { // dificil
-        cantidadParejas = 18; // 6x6 = 36 cartas (18 parejas)
+        cantidadParejas = 12; // 12 parejas = 24 cartas
     }
     
     //* Tomar solo las cartas necesarias

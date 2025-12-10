@@ -39,8 +39,6 @@ function cargarMazo() {
   });
 }
 
-
-
 //* mostrar mazo y sus detalles
 function mostrarMazo(mazo, cartas) {
   $("#deckName").text(mazo.name);

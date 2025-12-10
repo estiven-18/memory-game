@@ -17,6 +17,40 @@ if (!$id_mazo) {
     header('location: ./index.php');
     exit();
 }
+
+// Validar que el mazo tenga suficientes cartas para la dificultad seleccionada
+require_once '../model/MySQL.php';
+$mysql = new MySQL();
+$mysql->conectar();
+$pdo = $mysql->getConexion();
+
+$sql = "SELECT COUNT(*) as total FROM cartas WHERE id_mazo = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$id_mazo]);
+$resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+$totalCartas = $resultado['total'];
+
+$mysql->desconectar();
+
+// Validar según dificultad
+$cartasNecesarias = 0;
+switch ($dificultad) {
+    case 'facil':
+        $cartasNecesarias = 5;
+        break;
+    case 'medio':
+        $cartasNecesarias = 8;
+        break;
+    case 'dificil':
+        $cartasNecesarias = 12;
+        break;
+}
+
+if ($totalCartas < $cartasNecesarias) {
+    $_SESSION['error_message'] = "Este mazo no tiene suficientes cartas para el nivel $dificultad. Se necesitan al menos $cartasNecesarias cartas.";
+    header('location: seleccionar_dificultad.php?deck_id=' . $id_mazo);
+    exit();
+}
 ?>
 
 <?php
@@ -24,195 +58,7 @@ require_once './layout/header.php';
 require_once './layout/navbar.php';
 ?>
 
-<style>
-    /* Estilos del juego */
-    .game-container {
-        max-width: 900px;
-        margin: 50px auto;
-        padding: 20px;
-    }
-
-    /* Panel de información */
-    .info-panel {
-        background: white;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 30px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .stats {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .stat-item {
-        text-align: center;
-    }
-
-    .stat-value {
-        font-size: 32px;
-        font-weight: bold;
-        color: #4a90e2;
-    }
-
-    .stat-label {
-        font-size: 14px;
-        color: #666;
-        margin-top: 5px;
-    }
-
-    /* Tablero del juego */
-    .game-board {
-        display: grid;
-        gap: 15px;
-        margin: 30px auto;
-        max-width: 600px;
-    }
-
-    /* Diferentes tamaños según dificultad */
-    .game-board.facil {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .game-board.medio {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .game-board.dificil {
-        grid-template-columns: repeat(6, 1fr);
-    }
-
-    /* Carta */
-    .card {
-        aspect-ratio: 1;
-        position: relative;
-        cursor: pointer;
-        transform-style: preserve-3d;
-        transition: transform 0.6s;
-    }
-
-    .card.flipped {
-        transform: rotateY(180deg);
-    }
-
-    .card.matched {
-        opacity: 0.6;
-        cursor: default;
-        transform: rotateY(180deg) !important;
-    }
-
-    /* Ocultar el reverso cuando la carta está emparejada */
-    .card.matched .card-back {
-        display: none;
-    }
-
-    /* Asegurar que el frente se muestre correctamente cuando está emparejada */
-    .card.matched .card-front {
-        transform: rotateY(0deg) !important;
-    }
-
-    /* Frente y atrás de la carta */
-    .card-front,
-    .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .card-back {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        font-size: 40px;
-    }
-
-    .card-front {
-        background: white;
-        transform: rotateY(180deg);
-    }
-
-    .card-front img {
-        max-width: 90%;
-        max-height: 90%;
-        object-fit: contain;
-    }
-
-    /* Botones */
-    .game-buttons {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    .btn-game {
-        padding: 12px 30px;
-        margin: 5px;
-        font-size: 16px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-
-    .btn-restart {
-        background: #4a90e2;
-        color: white;
-    }
-
-    .btn-restart:hover {
-        background: #357abd;
-    }
-
-    .btn-exit {
-        background: #e74c3c;
-        color: white;
-    }
-
-    .btn-exit:hover {
-        background: #c0392b;
-    }
-
-    /* Modal de fin de juego */
-    .game-over-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
-        z-index: 1000;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .game-over-content {
-        background: white;
-        padding: 40px;
-        border-radius: 15px;
-        text-align: center;
-        max-width: 400px;
-    }
-
-    .game-over-content h2 {
-        color: #4a90e2;
-        margin-bottom: 20px;
-    }
-
-    .game-over-content .final-score {
-        font-size: 48px;
-        font-weight: bold;
-        color: #2ecc71;
-        margin: 20px 0;
-    }
-</style>
+<link rel="stylesheet" href="../ASSETS/css/jugar.css">
 
 <div class="game-container">
     <!-- Panel de información -->
