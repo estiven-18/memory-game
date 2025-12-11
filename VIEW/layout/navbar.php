@@ -40,6 +40,12 @@ $rol=$_SESSION['rol'];
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link <?php echo ($pagina == 'Estadísticas') ? 'active' : ''; ?>" href="estadisticas.php">
+                        Estadísticas
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="../CONTROLLER/log_out.php">
                         Cerrar Sesión
                     </a>
@@ -72,6 +78,12 @@ $rol=$_SESSION['rol'];
                 <li class="nav-item">
                     <a class="nav-link <?php echo ($pagina == 'Editar Perfil') ? 'active' : ''; ?>" href="editar_perfil.php">
                         Editar Perfil
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link <?php echo ($pagina == 'Estadísticas') ? 'active' : ''; ?>" href="estadisticas.php">
+                        Estadísticas
                     </a>
                 </li>
 
