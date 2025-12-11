@@ -25,22 +25,12 @@ require_once './layout/navbar.php';
             </h1>
         </div>
 
-        <!-- //* LOGOUT -->
-        <?php if ($rol === 'jugador') : ?>
-            <div class="nav-item">
-                <a class="btn btn-danger btnLogout" href="../CONTROLLER/log_out.php">
-                    <i class="bi bi-door-closed-fill"></i>
-                    Cerrar Sesión
-                </a>
-            </div>
-        <?php endif; ?>
-
         <!-- Grid de mazos -->
         <div id="mazosContainer" class="row g-4">
             <div class="col-12 text-center">
                 <div class="spinner-border text-white" role="status">
                     <!--/! eliminarrrrrrrrrrrrrrrrrrr -->
-                    <span class="visually-hidden">Cargando...</span>
+                    <!-- <span class="visually-hidden">Cargando...</span> -->
                 </div>
             </div>
         </div>
