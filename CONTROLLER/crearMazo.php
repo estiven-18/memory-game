@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $descripcion = isset($_POST["description"]) ? filter_var(trim($_POST["description"]), FILTER_SANITIZE_SPECIAL_CHARS) : '';
         
         try {
-            $sql = "INSERT INTO mazos (nombre, descripcion) VALUES (?, ?)";
+            $sql = "INSERT INTO mazos (nombre, descripcion, estado) VALUES (?, ?, 'activo')";
             $stmt = $pdo->prepare($sql);
             $resultado = $stmt->execute([$nombre, $descripcion]);
             

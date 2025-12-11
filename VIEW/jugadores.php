@@ -38,11 +38,7 @@ require_once './layout/navbar.php';
 
 
 
-        <!-- <div class="mb-3">
-            <a class="btn btn-danger" href="../CONTROLLER/log_out.php">
-                <i class="fas fa-door-open"></i> Cerrar Sesión
-            </a>
-        </div> -->
+       
 
         <div class="card-datatable">
             <div class="d-flex justify-content-between mb-3">

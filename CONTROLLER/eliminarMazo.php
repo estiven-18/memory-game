@@ -14,26 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $deck_id = intval($_POST["deck_id"]);
         
         try {
-            $sqlCartas = "SELECT imagen_frente FROM cartas WHERE id_mazo = ?";
-            $stmtCartas = $pdo->prepare($sqlCartas);
-            $stmtCartas->execute([$deck_id]);
-            $cartas = $stmtCartas->fetchAll(PDO::FETCH_ASSOC);
-            
-            // Eliminar archivos de imágenes
-            foreach ($cartas as $carta) {
-                $imagePath = "../" . $carta['imagen_frente'];
-                if (file_exists($imagePath)) {
-                    unlink($imagePath);
-                }
-            }
-            
-            // Eliminar cartas primero (foreign key)
-            $sqlDeleteCartas = "DELETE FROM cartas WHERE id_mazo = ?";
-            $stmtDeleteCartas = $pdo->prepare($sqlDeleteCartas);
-            $stmtDeleteCartas->execute([$deck_id]);
-            
-            // Luego eliminar el mazo
-            $sql = "DELETE FROM mazos WHERE id = ?";
+            // Cambiar estado del mazo a "eliminado" en lugar de borrarlo
+            $sql = "UPDATE mazos SET estado = 'eliminado' WHERE id = ?";
             $stmt = $pdo->prepare($sql);
             $resultado = $stmt->execute([$deck_id]);
             

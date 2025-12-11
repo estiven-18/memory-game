@@ -92,6 +92,85 @@
             pointer-events: none;
         }
         
+        /* Estilos para navbar más grande */
+        .navbar {
+            padding: 2rem 0 !important;
+            min-height: 90px;
+        }
+        
+        .navbar-brand {
+            font-size: 2.2rem !important;
+        }
+        
+        .nav-link {
+            font-size: 1.5rem !important;
+            padding: 0.75rem 1.25rem !important;
+        }
+        
+        /* Responsive para móviles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 0 !important;
+                min-height: 60px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.3rem !important;
+            }
+            
+            .nav-link {
+                font-size: 1.1rem !important;
+                padding: 0.5rem 1rem !important;
+            }
+        }
+        
+        /* Hover para botones verdes */
+        .btn[style*="background: #00A86B"]:hover {
+            background: #008557 !important;
+            transition: background 0.3s ease;
+        }
+        
+        /* Hacer las tarjetas de mazos más grandes */
+        .card-deck-item {
+            border-radius: 15px;
+        }
+        
+        .card-deck-item .card-body {
+            padding: 2rem;
+        }
+        
+        .card-deck-item .card-title {
+            font-size: 1.8rem !important;
+            margin-bottom: 1rem !important;
+        }
+        
+        .card-deck-item .card-text {
+            font-size: 1.2rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+        
+        .card-deck-item .bg-light h4 {
+            font-size: 2.5rem !important;
+        }
+        
+        .card-deck-item .bg-light small {
+            font-size: 1rem !important;
+        }
+        
+        .card-deck-item .bg-light {
+            padding: 1.5rem !important;
+        }
+        
+        .card-deck-item .btn {
+            font-size: 1.3rem !important;
+            padding: 0.75rem !important;
+        }
+        
+        .card-deck-item .btn-sm {
+            font-size: 1.1rem !important;
+            padding: 0.6rem 1rem !important;
+        }
+        
         .drop-zone {
             border: 3px dashed #00A86B;
             border-radius: 15px;
@@ -118,6 +197,84 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        
+        /* Estilos para stat-box grande en ver_mazo */
+        .stat-box-large {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 2.5rem 4rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 3px solid #00A86B;
+        }
+        
+        .stat-value-large {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label-large {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        
+        /* Hover para botones outline */
+        .btn-outline-success:hover {
+            background: #00A86B !important;
+            border-color: #00A86B !important;
+            color: white !important;
+        }
+        
+        /* Hover para tarjetas de dificultad */
+        .dificultad-facil:hover {
+            border-color: #00A86B !important;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 168, 107, 0.15) !important;
+        }
+        
+        .dificultad-medio:hover {
+            border-color: #ffc107 !important;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.15) !important;
+        }
+        
+        .dificultad-dificil:hover {
+            border-color: #dc3545 !important;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.15) !important;
+        }
+        
+        /* Responsive para móviles - dificultad */
+        @media (max-width: 768px) {
+            .dificultad-facil, .dificultad-medio, .dificultad-dificil {
+                margin-bottom: 1rem;
+            }
+            
+            .dificultad-facil .card-body,
+            .dificultad-medio .card-body,
+            .dificultad-dificil .card-body {
+                padding: 2rem !important;
+            }
+            
+            .dificultad-facil h3,
+            .dificultad-medio h3,
+            .dificultad-dificil h3 {
+                font-size: 1.5rem !important;
+            }
+            
+            .dificultad-facil .mb-4,
+            .dificultad-medio .mb-4,
+            .dificultad-dificil .mb-4 {
+                font-size: 2rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .dificultad-facil .fs-4,
+            .dificultad-medio .fs-4,
+            .dificultad-dificil .fs-4 {
+                font-size: 1.5rem !important;
+            }
         }
     </style>
 </head>

@@ -18,7 +18,6 @@ if (!$id_mazo) {
     exit();
 }
 
-// Validar que el mazo tenga suficientes cartas para la dificultad seleccionada
 require_once '../model/MySQL.php';
 $mysql = new MySQL();
 $mysql->conectar();
@@ -84,24 +83,30 @@ require_once './layout/navbar.php';
     </div>
 
     <div class="game-buttons">
-        <button class="btn-game btn-restart" onclick="reiniciarJuego()">
+        <button class="btn-game  btn-restart" onclick="reiniciarJuego()">
             Reiniciar Juego
         </button>
-        <button class="btn-game btn-exit" onclick="volverInicio()">
-            Volver al Inicio
-        </button>
+        
     </div>
 </div>
 
 <div id="gameOverModal" class="game-over-modal">
     <div class="game-over-content">
-        <h2>¡Juego Terminado!</h2>
-        <p>Has completado el juego</p>
-        <div class="final-score" id="finalScore">0</div>
-        <p>puntos obtenidos</p>
-        <div style="margin-top: 20px;">
-            <button class="btn-game btn-restart" onclick="reiniciarJuego()">Jugar de Nuevo</button>
-            <button class="btn-game btn-exit" onclick="volverInicio()">Volver al Inicio</button>
+        <div class="modal-icon" style="font-size: 4rem; color: #00A86B; margin-bottom: 1rem;">✓</div>
+        <h2 style="color: #00A86B; font-weight: bold; margin-bottom: 1rem;">¡Juego Completado!</h2>
+        
+        <div class="score-box">
+            <div class="final-score" id="finalScore">0</div>
+            <div class="score-label">Puntos Obtenidos</div>
+        </div>
+        
+        <div class="modal-buttons">
+            <button class="btn-modal btn-primary" onclick="reiniciarJuego()">
+                Jugar de Nuevo
+            </button>
+            <button class="btn-modal btn-secondary" onclick="volverInicio()">
+                Volver al Inicio
+            </button>
         </div>
     </div>
 </div>

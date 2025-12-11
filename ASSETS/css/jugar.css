@@ -28,7 +28,7 @@
 .stat-value {
     font-size: 40px;
     font-weight: bold;
-    color: #4a90e2;
+    color: #495057;
 }
 
 .stat-label {
@@ -148,26 +148,38 @@
 }
 
 .btn-game {
-    padding: 15px 40px;
+    padding: 0.75rem 2rem;
     margin: 5px;
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 12px;
-    border: none;
+    border-radius: 8px;
+    border: 2px solid transparent;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .btn-restart {
-    background: #4a90e2;
+    background: #495057;
     color: white;
+    border-color: #495057;
 }
 
+.btn-restart:hover {
+    background: #6c757d;
+    border-color: #6c757d;
+}
 
 .btn-exit {
-    background: #e74c3c;
+    background: transparent;
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-exit:hover {
+    background: #495057;
     color: white;
+    border-color: #495057;
 }
 
 
@@ -200,7 +212,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.7);
     z-index: 1000;
     align-items: center;
     justify-content: center;
@@ -208,20 +220,71 @@
 
 .game-over-content {
     background: white;
-    padding: 40px;
+    padding: 3rem;
     border-radius: 15px;
     text-align: center;
-    max-width: 400px;
+    max-width: 450px;
+    border: 3px solid #00A86B;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
 
-.game-over-content h2 {
-    color: #4a90e2;
-    margin-bottom: 20px;
+.score-box {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 4px solid #00A86B;
 }
 
 .game-over-content .final-score {
-    font-size: 48px;
+    font-size: 3.5rem;
     font-weight: bold;
-    color: #2ecc71;
-    margin: 20px 0;
+    color: #00A86B;
+    margin: 0;
+}
+
+.score-label {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-modal {
+    flex: 1;
+    padding: 0.875rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-modal.btn-primary {
+    background: #00A86B;
+    color: white;
+    border-color: #00A86B;
+}
+
+.btn-modal.btn-primary:hover {
+    background: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-modal.btn-secondary {
+    background: transparent;
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-modal.btn-secondary:hover {
+    background: #495057;
+    color: white;
+    border-color: #495057;
 }

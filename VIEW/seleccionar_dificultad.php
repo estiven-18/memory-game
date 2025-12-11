@@ -8,7 +8,6 @@ if ($_SESSION["acceso"] == false || $_SESSION["acceso"] == null) {
     header('location: ./login.php');
 }
 
-// $deck_id = isset($_GET['deck_id']) ? $_GET['deck_id'] : null;
 
 $deck_id = $_GET['deck_id'];
 
@@ -24,59 +23,65 @@ require_once './layout/header.php';
 require_once './layout/navbar.php';
 ?>
 
-<!-- <?php if (isset($_SESSION['error_message'])): ?>
-    <script>
-        $(document).ready(function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'No se puede jugar',
-                text: '<?php echo $_SESSION['error_message']; ?>',
-                confirmButtonText: 'Entendido'
-            });
-        });
-    </script>
-    <?php unset($_SESSION['error_message']); ?>
-<?php endif; ?> -->
+<div class="main-container">
+    <div class="container">
+        
+        <div class="text-center mt-5 mb-5">
+            <h1 class="display-4 fw-bold mb-3" style="color: #333;">
+                Selecciona la Dificultad
+            </h1>
+        </div>
 
-<link rel="stylesheet" href="../ASSETS/css/seleccionar_dificultad.css">
+        <div class="row g-4 justify-content-center mb-5">
+            
+            <div class="col-md-4">
+                <a href="jugar.php?id_mazo=<?php echo $deck_id; ?>&dificultad=facil" 
+                   class="card h-100 border-0 shadow-sm text-decoration-none dificultad-facil" 
+                   style="border: 2px solid #00A86B !important; transition: all 0.3s;">
+                    <div class="card-body text-center p-5">
+                        <div class="mb-4" style="font-size: 3rem; color: #00A86B;">●</div>
+                        <h3 class="fw-bold mb-3" style="color: #00A86B;">Fácil</h3>
+                        <div class="pt-3" style="border-top: 2px solid #e9ecef;">
+                            <div class="fs-4 fw-bold text-dark">5 parejas</div>
+                            <small class="text-muted">10 cartas en total</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-<div class="dificultad-container">
-    <div class="titulo">
-        <h1>Selecciona la Dificultad</h1>
-        <p>Elige el nivel que prefieras para comenzar a jugar</p>
+            <div class="col-md-4">
+                <a href="jugar.php?id_mazo=<?php echo $deck_id; ?>&dificultad=medio" 
+                   class="card h-100 border-0 shadow-sm text-decoration-none dificultad-medio" 
+                   style="border: 2px solid #ffc107 !important; transition: all 0.3s;">
+                    <div class="card-body text-center p-5">
+                        <div class="mb-4" style="font-size: 3rem; color: #ffc107;">●●</div>
+                        <h3 class="fw-bold mb-3" style="color: #ffc107;">Medio</h3>
+                        <div class="pt-3" style="border-top: 2px solid #e9ecef;">
+                            <div class="fs-4 fw-bold text-dark">8 parejas</div>
+                            <small class="text-muted">16 cartas en total</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a href="jugar.php?id_mazo=<?php echo $deck_id; ?>&dificultad=dificil" 
+                   class="card h-100 border-0 shadow-sm text-decoration-none dificultad-dificil" 
+                   style="border: 2px solid #dc3545 !important; transition: all 0.3s;">
+                    <div class="card-body text-center p-5">
+                        <div class="mb-4" style="font-size: 3rem; color: #dc3545;">●●●</div>
+                        <h3 class="fw-bold mb-3" style="color: #dc3545;">Difícil</h3>
+                        <div class="pt-3" style="border-top: 2px solid #e9ecef;">
+                            <div class="fs-4 fw-bold text-dark">12 parejas</div>
+                            <small class="text-muted">24 cartas en total</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
     </div>
-<!--cambiar la cantidad de lad caratssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
-    <div class="niveles">
-
-        <a href="jugar.php?id_mazo=<?php echo $deck_id; ?>&dificultad=facil" class="nivel-card facil" id="btnFacil">
-            <div class="nivel-titulo">Fácil</div>
-            
-            <div class="nivel-detalles">
-                5 parejas (10 cartas)<br>
-            </div>
-        </a>
-
-        <a href="jugar.php?id_mazo=<?php echo $deck_id; ?>&dificultad=medio" class="nivel-card medio" id="btnMedio">
-            <div class="nivel-titulo">Medio</div>
-            
-            <div class="nivel-detalles">
-                8 parejas (16 cartas)<br>
-            </div>
-        </a>
-
-        <a href="jugar.php?id_mazo=<?php echo $deck_id; ?>&dificultad=dificil" class="nivel-card dificil" id="btnDificil">
-            <div class="nivel-titulo">Difícil</div>
-            
-            <div class="nivel-detalles">
-                12 parejas (24 cartas)<br>
-            </div>
-        </a>
-    </div>
-
-    <a href="index.php" class="btn-volver"> Volver al Inicio</a>
 </div>
 
 <?php require_once './layout/footer.php'; ?>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../ASSETS/js/seleccionar_dificultad.js"></script>
