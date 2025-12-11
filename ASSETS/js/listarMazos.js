@@ -78,6 +78,7 @@ function mostrarMazos(mazos) {
                                     JUGAR
                                 </a>
                             ` : ''}
+                            ${(typeof rolUsuario !== 'undefined' && (rolUsuario === 'admin' || rolUsuario === 'ADMIN')) ? `
                             <div class="btn-group">
                                 <a href="ver_mazo.php?deck_id=${mazo.id}" 
                                    class="btn btn-sm" style="border: 1px solid #00A86B; color: #00A86B;">
@@ -88,6 +89,7 @@ function mostrarMazos(mazos) {
                                     Agregar
                                 </a>
                             </div>
+                            ` : ''}
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Content-Type: application/json');
 
 require_once '../model/MySQL.php';
@@ -7,7 +8,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $accion = isset($_POST['accion']) ? $_POST['accion'] : '';
     
-    
+    // Verificar que el usuario esté autenticado
+    if (!isset($_SESSION['usuario_id']) || !$_SESSION['acceso']) {
+        echo json_encode([
+            'success' => false,
+            'message' => 'No tiene autorización para realizar esta acción'
+        ]);
+        exit();
+    }
     
     $mysql = new MySQL();
     $mysql->conectar();

@@ -39,4 +39,7 @@ require_once './layout/navbar.php';
 </div>
 
 <?php require_once './layout/footer.php'; ?>
+<script>
+    const rolUsuario = '<?php echo $rol; ?>';
+</script>
 <script src="../ASSETS/js/listarMazos.js"></script>
