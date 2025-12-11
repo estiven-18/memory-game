@@ -44,6 +44,12 @@ require_once './layout/navbar.php';
                     <a href="agregar_cartas.php?deck_id=<?= $deck_id ?>" class="btn btn-lg" style="background: #00A86B; color: white;">
                         Agregar Cartas
                     </a>
+                    <a href="editar_mazo.php?deck_id=<?= $deck_id ?>" class="btn btn-lg btn-warning text-white">
+                        Editar Mazo
+                    </a>
+                    <a href="gestionar_cartas.php?deck_id=<?= $deck_id ?>" class="btn btn-lg btn-info text-white">
+                        Gestionar Cartas
+                    </a>
                     <button class="btn btn-danger btn-lg btnEliminarMazo" data-id="<?= $deck_id ?>">
                         Eliminar
                     </button>
