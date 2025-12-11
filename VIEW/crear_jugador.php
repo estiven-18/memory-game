@@ -21,12 +21,19 @@ require_once './layout/header.php';
 require_once './layout/navbar.php';
 ?>
 
+<link rel="stylesheet" href="../ASSETS/css/crear_jugador.css">
+
 <div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold mt-3 mb-3" style="color: #333;">
+            Crear Nuevo Jugador
+        </h1>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow">
-                <div class="card-header bg-success text-white">
-                    <h4 class="mb-0"><i class="fas fa-user-plus me-2"></i>Crear Nuevo Jugador</h4>
+                <div class="card-header text-white">
+                    <h4 class="mb-0">Crear Nuevo Jugador</h4>
                 </div>
                 <div class="card-body">
                     <form id="formCrearJugador">
@@ -51,9 +58,7 @@ require_once './layout/navbar.php';
                             <button type="submit" class="btn btn-success">
                                 Crear Jugador
                             </button>
-                            <a href="jugadores.php" class="btn btn-secondary">
-                                Volver
-                            </a>
+
                         </div>
                     </form>
                 </div>

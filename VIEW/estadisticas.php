@@ -81,10 +81,11 @@ require_once './layout/navbar.php';
 <link rel="stylesheet" href="../ASSETS/css/estadisticas.css">
 
 <div class="container stats-container">
-    <h1 class="text-center mb-5 fw-bold">
-        <i class="fas fa-chart-line me-2"></i>
-        <?php echo $rol === 'admin' ? 'Estadísticas del Sistema' : 'Mis Estadísticas'; ?>
-    </h1>
+    <div class="text-center mt-4 mb-5">
+        <h1 class="display-4 fw-bold mb-3" style="color: #333;">
+            Estadísticas
+        </h1>
+    </div>
 
     <div class="row g-4">
         <?php if ($rol === 'admin'): ?>

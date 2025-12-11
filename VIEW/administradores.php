@@ -39,11 +39,11 @@ require_once './layout/navbar.php';
 
 
 
-        <!-- <div class="mb-3">
-            <a class="btn btn-danger" href="../CONTROLLER/log_out.php">
-                <i class="fas fa-door-open"></i> Cerrar Sesión
-            </a>
-        </div> -->
+       <div class="text-center mt-4 mb-5">
+            <h1 class="display-4 fw-bold mb-3" style="color: #333;">
+                Gestionar los Administradores
+            </h1>
+        </div>
 
         <div class="card-datatable">
             <div class="d-flex justify-content-between mb-3">

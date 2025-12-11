@@ -19,10 +19,15 @@ require_once './layout/navbar.php';
 <link rel="stylesheet" href="../ASSETS/css/agregar_cartas.css">
 
 <div class="main-container">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold mt-5 mb-3" style="color: #333;">
+            Agregar Cartas
+        </h1>
+    </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <div class="card border-0 shadow-lg rounded-4 bg-white fade-in-up mt-5 mb-5">
+                <div class="card border-0 shadow-lg rounded-4 bg-white fade-in-up mb-5">
                     <div class="card-body p-4 p-md-5">
                         <div class="text-center mb-4">
                             <h2 class="fw-bold" style="color: #00A86B;">Agregar Cartas al Mazo</h2>
@@ -33,10 +38,8 @@ require_once './layout/navbar.php';
 
                             <div class="mb-4">
                                 <div class="drop-zone" id="dropZone">
-                                    <h5>Arrastra y suelta las imágenes aquí</h5>
-                                    <p class="text-muted mb-3">o haz clic para seleccionar</p>
-                                    <p class="small text-muted">Formatos soportados: JPG, PNG, GIF, WEBP</p>
-                                    <p class="small text-muted">Puede seleccionar múltiples imágenes a la vez</p>
+                                    <h5>Arrastra y suelta las imágenes aquí o</h5>
+                                    <p class="small text-muted">Puede seleccionar múltiples imágenes a la vez dejando presionada la tecla Ctrl y clicando las imágenes que desees seleccionar.</p>
                                 </div>
                                 <input type="file"
                                     id="card_images"
@@ -61,9 +64,7 @@ require_once './layout/navbar.php';
                                     disabled>
                                     Guardar Cartas
                                 </button>
-                                <a href="index.php" class="btn btn-lg btn-outline-secondary">
-                                    Volver al Inicio
-                                </a>
+                                
                             </div>
                         </form>
                     </div>

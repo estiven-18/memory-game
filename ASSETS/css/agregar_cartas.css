@@ -52,3 +52,8 @@
     border-color: #28a745;
     transform: scale(1.02);
 }
+
+.btn {
+    background: #00A86B;
+    color: white;
+}

@@ -24,11 +24,16 @@ require_once './layout/navbar.php';
 <link rel="stylesheet" href="../ASSETS/css/editar_perfil.css">
 
 <div class="container mt-5">
+    <div class="text-center  mb-5">
+        <h1 class="display-4 fw-bold mb-3" style="color: #333;">
+            Editar Perfil
+        </h1>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow">
-                <div class="card-header bg-success text-white">
-                    <h4 class="mb-0"><i class="fas fa-user-edit me-2"></i>Editar Mi Perfil</h4>
+                <div class="card-header text-white">
+                    <h4 class="mb-0">Editar Mi Perfil</h4>
                 </div>
                 <div class="card-body">
                     <form id="formEditarPerfil">
@@ -46,11 +51,9 @@ require_once './layout/navbar.php';
 
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-success">
-                                <i class="fas fa-save me-2"></i>Guardar Cambios
+                                Guardar Cambios
                             </button>
-                            <a href="index.php" class="btn btn-secondary">
-                                <i class="fas fa-arrow-left me-2"></i>Volver
-                            </a>
+
                         </div>
                     </form>
                 </div>

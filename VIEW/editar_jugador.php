@@ -45,13 +45,20 @@ if (!$jugador) {
 require_once './layout/header.php';
 require_once './layout/navbar.php';
 ?>
+<link rel="stylesheet" href="../ASSETS/css/editar_jugador.css">
 
 <div class="container mt-5">
+
     <div class="row justify-content-center">
+        <div class="text-center  mb-5">
+            <h1 class="display-4 fw-bold mb-3" style="color: #333;">
+                Editar Jugador
+            </h1>
+        </div>
         <div class="col-md-8">
             <div class="card shadow">
-                <div class="card-header bg-success text-white">
-                    <h4 class="mb-0"><i class="fas fa-user-edit me-2"></i>Editar Jugador</h4>
+                <div class="card-header text-white">
+                    <h4 class="mb-0">Editar Jugador</h4>
                 </div>
                 <div class="card-body">
                     <form id="formEditarJugador">
@@ -76,9 +83,7 @@ require_once './layout/navbar.php';
                             <button type="submit" class="btn btn-success">
                                 Guardar Cambios
                             </button>
-                            <a href="jugadores.php" class="btn btn-danger">
-                                Volver
-                            </a>
+
                         </div>
                     </form>
                 </div>

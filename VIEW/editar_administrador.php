@@ -45,13 +45,20 @@ if (!$admin) {
 require_once './layout/header.php';
 require_once './layout/navbar.php';
 ?>
+<link rel="stylesheet" href="../ASSETS/css/editar_administrador.css">
 
 <div class="container mt-5">
+    
     <div class="row justify-content-center">
+        <div class="text-center  mb-5">
+            <h1 class="display-4 fw-bold mb-3" style="color: #333;">
+                Editar Administrador
+            </h1>
+        </div>
         <div class="col-md-8">
             <div class="card shadow">
-                <div class="card-header bg-success text-white">
-                    <h4 class="mb-0"><i class="fas fa-user-edit me-2"></i>Editar Administrador</h4>
+                <div class="card-header text-white">
+                    <h4 class="mb-0">Editar Administrador</h4>
                 </div>
                 <div class="card-body">
                     <form id="formEditarAdmin">
@@ -76,9 +83,7 @@ require_once './layout/navbar.php';
                             <button type="submit" class="btn btn-success">
                                 Guardar Cambios
                             </button>
-                            <a href="administradores.php" class="btn btn-danger">
-                                </i>Volver
-                            </a>
+                            
                         </div>
                     </form>
                 </div>
