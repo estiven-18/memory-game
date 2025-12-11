@@ -29,6 +29,66 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Hacer la tabla más grande */
+.table {
+    font-size: 1.1rem;
+}
+
+.table thead th {
+    font-size: 1.2rem;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.table .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Hacer más grande el buscador y elementos de DataTables */
+.dataTables_wrapper .dataTables_filter input {
+    font-size: 1rem !important;
+    padding: 0.5rem 0.8rem !important;
+    border-radius: 8px !important;
+}
+
+.dataTables_wrapper .dataTables_filter label {
+    font-size: 1rem !important;
+    font-weight: 500;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    font-size: 1rem !important;
+    padding: 0.4rem 2rem 0.4rem 0.6rem !important;
+    min-width: 70px !important;
+}
+
+.dataTables_wrapper .dataTables_length label {
+    font-size: 1rem !important;
+    font-weight: 500;
+}
+
+.dataTables_wrapper .dataTables_info {
+    font-size: 1rem !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    font-size: 1rem !important;
+    padding: 0.4rem 0.6rem !important;
+}
+
+/* Botón Nuevo Jugador más grande */
+.card-datatable .btn-success {
+    font-size: 1.2rem !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600;
+}
+
 /* Badge personalizado para roles */
 .badge-admin {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

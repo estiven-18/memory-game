@@ -35,10 +35,14 @@ require_once './layout/navbar.php';
 
 <div class="usuarios-container">
     <div class="container">
+        <div class="text-center mt-4 mb-5">
+            <h1 class="display-4 fw-bold mb-3" style="color: #333;">
+                Administrar los Jugadores
+            </h1>
+        </div>
 
 
 
-       
 
         <div class="card-datatable">
             <div class="d-flex justify-content-between mb-3">
