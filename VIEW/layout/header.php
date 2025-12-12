@@ -134,6 +134,16 @@
         .card-deck-item {
             border-radius: 15px;
         }
+        .logout{
+            color: white !important;
+            background-color: #dc3545 !important;
+            border-radius: 10px;
+        }
+
+        .logout:hover{
+            background-color: #bb2d3b !important;
+            color: white !important;
+        }
         
         .card-deck-item .card-body {
             padding: 2rem;

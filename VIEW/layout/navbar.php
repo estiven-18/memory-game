@@ -46,7 +46,7 @@ $rol=$_SESSION['rol'];
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../CONTROLLER/log_out.php">
+                    <a class="nav-link logout" href="../CONTROLLER/log_out.php">
                         Cerrar Sesión
                     </a>
                 </li>
@@ -88,7 +88,7 @@ $rol=$_SESSION['rol'];
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../CONTROLLER/log_out.php">
+                    <a class="nav-link logout" href="../CONTROLLER/log_out.php">
                         Cerrar Sesión
                     </a>
                 </li>
