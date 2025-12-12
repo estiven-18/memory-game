@@ -39,7 +39,7 @@ if ($rol === 'admin') {
     $stmtMazos->execute();
     $totalMazos = $stmtMazos->fetch(PDO::FETCH_ASSOC)['total'];
 
-    $sqlPuntos = "SELECT COALESCE(SUM(puntaje_total), 0) as total FROM usuarios WHERE rol = 'jugador' OR rol = 'JUGADOR'";
+    $sqlPuntos = "SELECT puntaje_total as total FROM usuarios";
     $stmtPuntos = $pdo->prepare($sqlPuntos);
     $stmtPuntos->execute();
     $puntosTotales = $stmtPuntos->fetch(PDO::FETCH_ASSOC)['total'];
