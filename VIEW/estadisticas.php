@@ -72,6 +72,12 @@ $stmtTop10 = $pdo->prepare($sqlTop10);
 $stmtTop10->execute();
 $clasificacion = $stmtTop10->fetchAll(PDO::FETCH_ASSOC);
 
+// Obtener todos los estudiantes para la tabla completa
+$sqlTodos = "SELECT nombre, numero_ficha, puntaje_total FROM usuarios WHERE rol = 'jugador' OR rol = 'JUGADOR' ORDER BY puntaje_total DESC";
+$stmtTodos = $pdo->prepare($sqlTodos);
+$stmtTodos->execute();
+$todosEstudiantes = $stmtTodos->fetchAll(PDO::FETCH_ASSOC);
+
 $mysql->desconectar();
 
 require_once './layout/header.php';
@@ -233,11 +239,11 @@ require_once './layout/navbar.php';
                         <div class="ranking-position <?php echo $claseEstilo; ?>">
                             <?php echo $posicion; ?>
                         </div>
-                        
 
 
 
-                        
+
+
                         <div class="ranking-info">
                             <p class="ranking-name">
                                 <?php echo htmlspecialchars($jugador['nombre']); ?>
@@ -254,6 +260,46 @@ require_once './layout/navbar.php';
             <?php endif; ?>
         </div>
     </div>
+
+    <!-- Tabla completa de todos los estudiantes -->
+    <div class="ranking-card mt-5">
+        <div class="ranking-header">
+            <h3 class="mb-0"><i class="fas fa-users me-2"></i>Todos los Estudiantes</h3>
+        </div>
+        <div class="p-4">
+            <table id="tablaEstudiantes" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Ficha</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($todosEstudiantes as $index => $estudiante): ?>
+                        <tr>
+                            <td><?php echo $index + 1; ?></td>
+                            <td><?php echo htmlspecialchars($estudiante['nombre']); ?></td>
+                            <td><?php echo $estudiante['numero_ficha']; ?></td>
+                            <td><strong><?php echo $estudiante['puntaje_total']; ?></strong></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <?php require_once './layout/footer.php'; ?>
+
+<script>
+    $(document).ready(function() {
+        $('#tablaEstudiantes').DataTable({
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'
+            },
+            responsive: true
+        });
+    });
+</script>
