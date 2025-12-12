@@ -1,138 +1,259 @@
 .stats-container {
-    padding: 30px 0;
+  padding: 30px 0;
 }
 
 .stat-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    margin-bottom: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 20px;
 }
 
 .stat-card-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .stat-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: white;
 }
 
-.stat-icon.green { background: #00A86B; }
-.stat-icon.blue { background: #00A86B; }
-.stat-icon.orange { background: #00A86B; }
-.stat-icon.purple { background: #00A86B; }
-.stat-icon.gold { background: #00A86B; }
+.stat-icon.green {
+  background: #00a86b;
+}
+.stat-icon.blue {
+  background: #00a86b;
+}
+.stat-icon.orange {
+  background: #00a86b;
+}
+.stat-icon.purple {
+  background: #00a86b;
+}
+.stat-icon.gold {
+  background: #00a86b;
+}
 
 .stat-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
 }
 
 .stat-label {
-    font-size: 1rem;
-    color: #6c757d;
-    margin: 0;
+  font-size: 1rem;
+  color: #6c757d;
+  margin: 0;
 }
 
 .ranking-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .ranking-header {
-    background: #00A86B;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background: #00a86b;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
 .ranking-list {
-    padding: 20px;
+  padding: 20px;
 }
 
 .ranking-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #f8f9fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
 
 .ranking-position {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.ranking-position.gold { background: #ffd700; }
-.ranking-position.silver { background: #c0c0c0; }
-.ranking-position.bronze { background: #cd7f32; }
-.ranking-position.normal { background: #6c757d; }
+.ranking-position.gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ffd700 100%);
+}
+
+.ranking-position.silver {
+  background: linear-gradient(135deg, #c0c0c0 0%, #c0c0c0 100%);
+}
+
+.ranking-position.bronze {
+  background: linear-gradient(135deg, #cd7f32 0%, #cd7f32 100%);
+}
+
+.ranking-position.normal {
+  background: #6c757d;
+}
+
+.badge-container {
+  display: flex;
+  align-items: center;
+}
+
+.badge-container-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.badge-medal {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gold-badge {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #8b6914;
+  border: 2px solid #ffd700;
+  animation: shine 2s infinite;
+}
+
+.silver-badge {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  color: #555;
+  border: 2px solid #c0c0c0;
+}
+
+.bronze-badge {
+  background: linear-gradient(135deg, #cd7f32 0%, #e5a76a 100%);
+  color: #5a3a1a;
+  border: 2px solid #cd7f32;
+}
+
+@keyframes shine {
+  0%,
+  100% {
+    box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 2px 12px rgba(255, 215, 0, 0.6),
+      0 0 20px rgba(255, 215, 0, 0.3);
+  }
+}
 
 .ranking-info {
-    flex: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.ranking-name {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #333;
-    margin: 0;
-}
-
-.ranking-points {
-    color: #6c757d;
-    font-size: 0.9rem;
-}
-
-.ranking-badge {
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.ranking-badge.gold { background: #ffd700; color: #fff; }
-.ranking-badge.silver { background: #c0c0c0; color: #fff; }
-.ranking-badge.bronze { background: #cd7f32; color: #fff; }
-
-.partidas-table {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.table-header {
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    color: white;
-    padding: 20px;
+.ranking-info > * {
+  margin: 0;
 }
 
 .user-highlight {
-    background: rgba(0, 168, 107, 0.1) !important;
-    border-left: 4px solid #00A86B;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%) !important;
+  border: 2px solid #2196f3;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.ranking-name {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #333;
+  margin-left: 10px;
+  min-width: 150px;
+  flex-shrink: 0;
+}
+
+.ranking-points {
+  color: #6c757d;
+  font-size: 1.5rem;
+  margin-left: 10px;
+
+  white-space: nowrap;
+}
+
+.ranking-points i {
+  color: #ffc107;
+  margin-right: 3px;
+}
+
+.ranking-ficha {
+  color: #6c757d;
+  font-size: 1.3rem;
+  margin-left: 10px;
+
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.ranking-ficha i {
+  color: #000000;
+  margin-right: 3px;
+}
+
+.ranking-badge {
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.ranking-badge.gold {
+  background: #ffd700;
+  color: #fff;
+}
+.ranking-badge.silver {
+  background: #c0c0c0;
+  color: #fff;
+}
+.ranking-badge.bronze {
+  background: #cd7f32;
+  color: #fff;
+}
+
+.partidas-table {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-header {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  padding: 20px;
 }

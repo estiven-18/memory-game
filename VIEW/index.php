@@ -23,7 +23,7 @@ try {
             WHERE mazos.estado = 'activo'
             GROUP BY mazos.id 
             ORDER BY mazos.id DESC";
-    
+
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $mazos = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -48,24 +48,36 @@ require_once './layout/navbar.php';
             <h1 class="display-3 fw-bold mb-3">
                 Mazos Disponibles
             </h1>
-            
+
         </div>
 
         <!-- Grid de mazos -->
         <div class="row g-4">
             <?php if (empty($mazos)): ?>
-                <div class="col-12">
-                    <div class="card border-0 shadow-lg rounded-4 bg-white">
-                        <div class="card-body text-center py-5">
-                            <h3 class="text-muted mb-3">No tienes mazos todavía</h3>
-                            <p class="text-secondary mb-4">Crea tu primer mazo para comenzar a jugar</p>
-                            <a href="crear_mazo.php" class="btn btn-lg" style="background: #00A86B; color: white;">
-                                Crear Mi Primer Mazo
-                            </a>
+                <?php if ($rol === 'admin' || $rol === 'ADMIN'): ?>
+                    <div class="col-12">
+                        <div class="card border-0 shadow-lg rounded-4 bg-white">
+                            <div class="card-body text-center py-5">
+                                <h3 class="text-muted mb-3">No tienes mazos todavía</h3>
+                                <p class="text-secondary mb-4">Crea tu primer mazo para comenzar a jugar</p>
+                                <a href="crear_mazo.php" class="btn btn-lg" style="background: #00A86B; color: white;">
+                                    Crear Mi Primer Mazo
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php else: ?>
+                    <?php if ($rol == "jugador" || $rol == "jugador"): ?>
+                        <div class="col-12 mt-4">
+                            <div class="alert alert-success text-center" role="alert">
+                                <strong>Información:</strong> Los administradores aún no han creado mazos de juego.
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
             <?php else: ?>
+
+
                 <?php foreach ($mazos as $mazo): ?>
                     <?php $puedeJugar = $mazo['total_cards'] >= 5; ?>
                     <div class="col-md-6 col-lg-4 mb-4">
@@ -77,7 +89,7 @@ require_once './layout/navbar.php';
                                 <p class="card-text text-center text-muted small mb-3">
                                     <?php echo htmlspecialchars($mazo['description'] ?: 'Sin descripción'); ?>
                                 </p>
-                                
+
                                 <div class="row g-2 mb-3">
                                     <div class="col-6">
                                         <div class="bg-light rounded p-2 text-center">
@@ -92,26 +104,26 @@ require_once './layout/navbar.php';
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="d-grid gap-2">
                                     <?php if ($puedeJugar): ?>
                                         <!-- poner hover cuando se pueda jugar -->
-                                        <a href="seleccionar_dificultad.php?deck_id=<?php echo $mazo['id']; ?>" 
-                                    
-                                           class="btn" style="background: #00A86B; color: white;  ;">
-                                    
+                                        <a href="seleccionar_dificultad.php?deck_id=<?php echo $mazo['id']; ?>"
+
+                                            class="btn" style="background: #00A86B; color: white;  ;">
+
                                             Jugar
                                         </a>
                                     <?php endif; ?>
-                                    
+
                                     <?php if ($rol === 'admin' || $rol === 'ADMIN'): ?>
                                         <div class="btn-group">
-                                            <a href="ver_mazo.php?deck_id=<?php echo $mazo['id']; ?>" 
-                                               class="btn  btn-outline-secondary btn-sm" >
+                                            <a href="ver_mazo.php?deck_id=<?php echo $mazo['id']; ?>"
+                                                class="btn  btn-outline-secondary btn-sm">
                                                 Ver
                                             </a>
-                                            <a href="agregar_cartas.php?deck_id=<?php echo $mazo['id']; ?>" 
-                                               class="btn btn-outline-secondary btn-sm">
+                                            <a href="agregar_cartas.php?deck_id=<?php echo $mazo['id']; ?>"
+                                                class="btn btn-outline-secondary btn-sm">
                                                 Agregar
                                             </a>
                                         </div>

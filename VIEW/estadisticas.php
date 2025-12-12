@@ -67,7 +67,7 @@ if ($rol === 'admin') {
 }
 
 
-$sqlTop10 = "SELECT id, nombre, puntaje_total FROM usuarios WHERE rol = 'jugador' OR rol = 'JUGADOR'ORDER BY puntaje_total DESC LIMIT 10";
+$sqlTop10 = "SELECT id, nombre, puntaje_total, numero_ficha FROM usuarios WHERE rol = 'jugador' OR rol = 'JUGADOR'ORDER BY puntaje_total DESC LIMIT 10";
 $stmtTop10 = $pdo->prepare($sqlTop10);
 $stmtTop10->execute();
 $clasificacion = $stmtTop10->fetchAll(PDO::FETCH_ASSOC);
@@ -94,7 +94,7 @@ require_once './layout/navbar.php';
                 <div class="stat-card">
                     <div class="stat-card-header">
                         <div class="stat-icon green">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-user"></i>
                         </div>
                         <div>
                             <p class="stat-value"><?php echo $totalJugadores; ?></p>
@@ -107,7 +107,7 @@ require_once './layout/navbar.php';
                 <div class="stat-card">
                     <div class="stat-card-header">
                         <div class="stat-icon blue">
-                            <i class="fas fa-gamepad"></i>
+                            <i class="fas fa-trophy"></i>
                         </div>
                         <div>
                             <p class="stat-value"><?php echo $totalPartidas; ?></p>
@@ -233,6 +233,7 @@ require_once './layout/navbar.php';
                         <div class="ranking-position <?php echo $claseEstilo; ?>">
                             <?php echo $posicion; ?>
                         </div>
+                        
 
 
 
@@ -242,7 +243,10 @@ require_once './layout/navbar.php';
                                 <?php echo htmlspecialchars($jugador['nombre']); ?>
                             </p>
                             <p class="ranking-points">
-                                <?php echo $jugador['puntaje_total']; ?> puntos
+                                <i class="fas fa-star"></i> <?php echo $jugador['puntaje_total']; ?> puntos
+                            </p>
+                            <p class="ranking-ficha">
+                                <i class="fas fa-id-card"></i> Ficha: <?php echo $jugador['numero_ficha']; ?>
                             </p>
                         </div>
                     </div>
