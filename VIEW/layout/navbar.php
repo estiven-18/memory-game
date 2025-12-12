@@ -6,6 +6,7 @@ $rol=$_SESSION['rol'];
 <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary sticky-top shadow-sm h">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
+            <img src="https://www.sena.edu.co/Style%20Library/alayout/images/logoSena.png" alt="Logo SENA" style="height: 60px; margin-right: 12px; background: white; padding: 6px; border-radius: 8px;">
             <span class="fw-bold">Juego de Memoria</span>
         </a>
         
@@ -60,6 +61,7 @@ $rol=$_SESSION['rol'];
 <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary sticky-top shadow-sm h">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
+            <img src="https://www.sena.edu.co/Style%20Library/alayout/images/logoSena.png" alt="Logo SENA" style="height: 60px; margin-right: 12px; background: white; padding: 6px; border-radius: 8px;">
             <span class="fw-bold">Juego de Memoria</span>
         </a>
         
