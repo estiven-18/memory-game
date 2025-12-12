@@ -76,7 +76,7 @@ require_once './layout/navbar.php';
 
                         <div class="mb-3">
                             <label for="numero_ficha" class="form-label">Número de Ficha</label>
-                            <input type="text" class="form-control" id="numero_ficha" value="<?php echo htmlspecialchars($jugador['numero_ficha']); ?>" required>
+                            <input type="number" class="form-control" id="numero_ficha" value="<?php echo htmlspecialchars($jugador['numero_ficha']); ?>" required>
                         </div>
 
                         <div class="d-grid gap-2">

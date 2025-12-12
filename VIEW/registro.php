@@ -37,7 +37,7 @@
 
                             <div class="mb-3">
                                 <label for="numero_ficha" class="form-label">Número de Ficha</label>
-                                <input type="text" class="form-control" id="numero_ficha" name="numero_ficha" required>
+                                <input type="number" class="form-control" id="numero_ficha" name="numero_ficha" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100" id="btnRegistro">
