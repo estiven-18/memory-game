@@ -205,7 +205,7 @@ require_once './layout/navbar.php';
 
     <div id="top10" class="ranking-card mt-4">
         <div class="ranking-header">
-            <h3 class="mb-0"><i class="fas fa-trophy me-2"></i>Top 10 Jugadores</h3>
+            <h3 class="mb-0">Top 10 Jugadores</h3>
         </div>
         <div class="ranking-list">
             <?php if (count($clasificacion) === 0): ?>
@@ -256,7 +256,7 @@ require_once './layout/navbar.php';
 
     <div id="todosEstudiantes" class="ranking-card mt-5">
         <div class="ranking-header">
-            <h3 class="mb-0"><i class="fas fa-users me-2"></i>Todos los Estudiantes</h3>
+            <h3 class="mb-0">Todos los Estudiantes</h3>
         </div>
         <div class="p-4">
             <div class="table-responsive">
@@ -287,7 +287,7 @@ require_once './layout/navbar.php';
     <!-- Tabla de Partidas -->
     <div id="partidas" class="ranking-card mt-5">
         <div class="ranking-header">
-            <h3 class="mb-0"><i class="bi bi-controller me-2"></i><?php echo $rol === 'admin' ? 'Todas las Partidas' : 'Mis Partidas'; ?></h3>
+            <h3 class="mb-0"><?php echo $rol === 'admin' ? 'Todas las Partidas' : 'Mis Partidas'; ?></h3>
         </div>
         <div class="p-4">
             <div class="table-responsive">
