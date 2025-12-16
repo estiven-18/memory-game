@@ -98,53 +98,37 @@ require_once './layout/navbar.php';
             <!-- //*  Vista Admin -->
             <div class="col-md-3">
                 <div class="stat-card">
+                    <i class="stat-icon green bi bi-people-fill"></i>
                     <div class="stat-card-header">
-                        <div class="stat-icon green">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <p class="stat-value"><?php echo $totalJugadores; ?></p>
-                            <p class="stat-label">Jugadores</p>
-                        </div>
+                        <p class="stat-value"><?php echo $totalJugadores; ?></p>
+                        <p class="stat-label">Jugadores</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat-card">
+                    <i class="stat-icon blue bi bi-trophy-fill"></i>
                     <div class="stat-card-header">
-                        <div class="stat-icon blue">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div>
-                            <p class="stat-value"><?php echo $totalPartidas; ?></p>
-                            <p class="stat-label">Partidas Jugadas</p>
-                        </div>
+                        <p class="stat-value"><?php echo $totalPartidas; ?></p>
+                        <p class="stat-label">Partidas Jugadas</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat-card">
+                    <i class="stat-icon orange bi bi-layers-fill"></i>
                     <div class="stat-card-header">
-                        <div class="stat-icon orange">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
-                        <div>
-                            <p class="stat-value"><?php echo $totalMazos; ?></p>
-                            <p class="stat-label">Mazos Disponibles</p>
-                        </div>
+                        <p class="stat-value"><?php echo $totalMazos; ?></p>
+                        <p class="stat-label">Mazos Disponibles</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat-card">
+                    <i class="stat-icon gold bi bi-star-fill"></i>
                     <div class="stat-card-header">
-                        <div class="stat-icon gold">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div>
-                            <p class="stat-value"><?php echo $puntosTotales; ?></p>
-                            <p class="stat-label">Puntos Totales</p>
-                        </div>
+                        <p class="stat-value"><?php echo $puntosTotales; ?></p>
+                        <p class="stat-label">Puntos Totales</p>
                     </div>
                 </div>
             </div>
@@ -154,53 +138,37 @@ require_once './layout/navbar.php';
             <!-- //*  Vista Jugador -->
             <div class="col-md-3">
                 <div class="stat-card">
+                    <i class="stat-icon gold bi bi-star-fill"></i>
                     <div class="stat-card-header">
-                        <div class="stat-icon gold">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div>
-                            <p class="stat-value"><?php echo $misPuntos; ?></p>
-                            <p class="stat-label">Mis Puntos</p>
-                        </div>
+                        <p class="stat-value"><?php echo $misPuntos; ?></p>
+                        <p class="stat-label">Mis Puntos</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat-card">
+                    <i class="stat-icon blue bi bi-controller"></i>
                     <div class="stat-card-header">
-                        <div class="stat-icon blue">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <div>
-                            <p class="stat-value"><?php echo $misPartidas; ?></p>
-                            <p class="stat-label">Partidas Jugadas</p>
-                        </div>
+                        <p class="stat-value"><?php echo $misPartidas; ?></p>
+                        <p class="stat-label">Partidas Jugadas</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat-card">
+                    <i class="stat-icon orange bi bi-trophy-fill"></i>
                     <div class="stat-card-header">
-                        <div class="stat-icon orange">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div>
-                            <p class="stat-value"><?php echo $mejorPuntaje; ?></p>
-                            <p class="stat-label">Mejor Puntaje</p>
-                        </div>
+                        <p class="stat-value"><?php echo $mejorPuntaje; ?></p>
+                        <p class="stat-label">Mejor Puntaje</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat-card">
+                    <i class="stat-icon purple bi bi-award-fill"></i>
                     <div class="stat-card-header">
-                        <div class="stat-icon purple">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <div>
-                            <p class="stat-value">#<?php echo $posicionClasificacion; ?></p>
-                            <p class="stat-label">Posición en Clasificación</p>
-                        </div>
+                        <p class="stat-value">#<?php echo $posicionClasificacion; ?></p>
+                        <p class="stat-label">Posición en Clasificación</p>
                     </div>
                 </div>
             </div>
@@ -252,7 +220,7 @@ require_once './layout/navbar.php';
                                 <i class="fas fa-star"></i> <?php echo $jugador['puntaje_total']; ?> puntos
                             </p>
                             <p class="ranking-ficha">
-                                <i class="fas fa-id-card"></i> Ficha: <?php echo $jugador['numero_ficha']; ?>
+                                Ficha: <?php echo $jugador['numero_ficha']; ?>
                             </p>
                         </div>
                     </div>
