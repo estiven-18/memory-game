@@ -205,9 +205,6 @@ function compararCartas() {
         //* Restar puntos (-5 por fallo)
         puntos -= 5;
         
-        //* No permitir puntos negativos
-        if (puntos < 0) puntos = 0;
-        
         //* Actualizar estadísticas
         actualizarEstadisticas();
     }
