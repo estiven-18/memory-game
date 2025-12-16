@@ -118,6 +118,22 @@ $('#formSubirCartas').on('submit', function(e) {
         return;
     }
     
+    if (archivosSeleccionados.length > 12) {
+        Swal.fire({
+            icon: 'info',
+            title: '¡Atención!',
+            text: 'Solo puedes agregar un máximo de 12 cartas',
+            showCancelButton: true,
+            confirmButtonText: 'Recargar Página',
+            cancelButtonText: 'Cancelar'
+        }).then((resultado) => {
+            if (resultado.isConfirmed) {
+                location.reload();
+            }
+        });
+        return;
+    }
+    
     // Crear FormData manualmente con los archivos seleccionados
     const formData = new FormData();
     formData.append('deck_id', $('#deck_id_input').val());
@@ -126,7 +142,7 @@ $('#formSubirCartas').on('submit', function(e) {
         formData.append('card_images[]', archivo);
     });
     
-    $('#btnSubirCartas').prop('disabled', true).html('<i class="fas fa-spinner fa-spin me-2"></i>Subiendo...');
+    // $('#btnSubirCartas').prop('disabled', true).html('<i class="fas fa-spinner fa-spin me-2"></i>Subiendo...');
     
     $.ajax({
         url: '../CONTROLLER/subirCartas.php',
@@ -153,7 +169,20 @@ $('#formSubirCartas').on('submit', function(e) {
                     }
                 });
             } else {
+                if(archivosSeleccionados.length > 12){
+                Swal.fire({
+                    icon: 'info',
+                    title: '¡Atención!',
+                    showCancelButton: true,
+                    confirmButtonText: 'Recargar Página',
+                }).then((resultado) => {
+                    if (resultado.isConfirmed) {
+                        location.reload();
+                    } 
+                });
+            } else {
                 Swal.fire('Error', respuesta.message, 'error');
+            }
             }
         },
         error: function() {

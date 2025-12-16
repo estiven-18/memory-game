@@ -39,7 +39,10 @@ require_once './layout/navbar.php';
                             <div class="mb-4">
                                 <div class="drop-zone" id="dropZone">
                                     <h5>Arrastra y suelta las imágenes aquí o</h5>
-                                    <p class="small text-muted">Puede seleccionar múltiples imágenes a la vez dejando presionada la tecla Ctrl y clicando las imágenes que desees seleccionar.</p>
+                                    
+                                    <p class=" text-muted">Puede seleccionar múltiples imágenes a la vez dejando presionada la tecla Ctrl y clicando las imágenes que desees seleccionar.</p>
+                                    <p class=" text-danger">¡Solo agregar 12 cartas!</p>
+
                                 </div>
                                 <input type="file"
                                     id="card_images"

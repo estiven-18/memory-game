@@ -78,13 +78,27 @@ $stmtTodos = $pdo->prepare($sqlTodos);
 $stmtTodos->execute();
 $todosEstudiantes = $stmtTodos->fetchAll(PDO::FETCH_ASSOC);
 
+// Obtener partidas según el rol
+if ($rol === 'admin') {
+    // Admin ve todas las partidas
+    $sqlPartidas = "SELECT partidas.*, usuarios.nombre as jugador_nombre, mazos.nombre as mazo_nombre FROM partidas JOIN usuarios  ON partidas.id_jugador = usuarios.id JOIN mazos ON partidas.id_mazo = mazos.id ORDER BY partidas.fecha DESC";
+    $stmtPartidasLista = $pdo->prepare($sqlPartidas);
+    $stmtPartidasLista->execute();
+} else {
+    // Jugador solo ve sus partidas
+    $sqlPartidas = "SELECT partidas.*, mazos.nombre as mazo_nombre FROM partidas JOIN mazos ON partidas.id_mazo = mazos.id WHERE partidas.id_jugador = ? ORDER BY partidas.fecha DESC";
+    $stmtPartidasLista = $pdo->prepare($sqlPartidas);
+    $stmtPartidasLista->execute([$usuario_id]);
+}
+$listaPartidas = $stmtPartidasLista->fetchAll(PDO::FETCH_ASSOC);
+
 $mysql->desconectar();
 
 require_once './layout/header.php';
 require_once './layout/navbar.php';
 ?>
 
-<link rel="stylesheet" href="../ASSETS/css/estadisticas.css">
+<link rel="stylesheet" href="../ASSETS/css/estadisticas.css?v=2">
 
 <div class="container stats-container">
     <div class="text-center mt-4 mb-5">
@@ -175,7 +189,6 @@ require_once './layout/navbar.php';
         <?php endif; ?>
     </div>
 
-    <!-- /* TOOP 10 TABLA DE CLASIFICACIÓN -->
 
 
     <div class="ranking-card mt-4">
@@ -229,32 +242,85 @@ require_once './layout/navbar.php';
         </div>
     </div>
 
-    <!-- Tabla completa de todos los estudiantes -->
     <div class="ranking-card mt-5">
         <div class="ranking-header">
             <h3 class="mb-0"><i class="fas fa-users me-2"></i>Todos los Estudiantes</h3>
         </div>
         <div class="p-4">
-            <table id="tablaEstudiantes" class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nombre</th>
-                        <th>Ficha</th>
-                        <th>Puntos</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($todosEstudiantes as $index => $estudiante): ?>
+            <div class="table-responsive">
+                <table id="tablaEstudiantes" class="table table-striped table-hover">
+                    <thead>
                         <tr>
-                            <td><?php echo $index + 1; ?></td>
-                            <td><?php echo htmlspecialchars($estudiante['nombre']); ?></td>
-                            <td><?php echo $estudiante['numero_ficha']; ?></td>
-                            <td><strong><?php echo $estudiante['puntaje_total']; ?></strong></td>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Ficha</th>
+                            <th>Puntos</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($todosEstudiantes as $i => $estudiante): ?>
+                            <tr>
+                                <td><?php echo $i + 1; ?></td>
+                                <td><?php echo htmlspecialchars($estudiante['nombre']); ?></td>
+                                <td><?php echo $estudiante['numero_ficha']; ?></td>
+                                <td><strong><?php echo $estudiante['puntaje_total']; ?></strong></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla de Partidas -->
+    <div class="ranking-card mt-5">
+        <div class="ranking-header">
+            <h3 class="mb-0"><i class="bi bi-controller me-2"></i><?php echo $rol === 'admin' ? 'Todas las Partidas' : 'Mis Partidas'; ?></h3>
+        </div>
+        <div class="p-4">
+            <div class="table-responsive">
+                <table id="tablaPartidas" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <?php if ($rol === 'admin'): ?>
+                                <th>Jugador</th>
+                            <?php endif; ?>
+                            <th>Mazo</th>
+                            <th>Dificultad</th>
+                            <th>Puntaje</th>
+                            <th>Movimientos</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($listaPartidas as $i => $partida): 
+                            $clasesPuntaje = $partida['puntaje_obtenido'] < 0 ? 'puntaje-negativo' : 'puntaje-positivo';
+                            $dificultadClase = 'dificultad-' . strtolower($partida['dificultad']);
+                        ?>
+                            <tr>
+                                <td><?php echo $i + 1; ?></td>
+                                <?php if ($rol === 'admin'): ?>
+                                    <td><?php echo htmlspecialchars($partida['jugador_nombre']); ?></td>
+                                <?php endif; ?>
+                                <td><?php echo htmlspecialchars($partida['mazo_nombre']); ?></td>
+                                <td>
+                                    <span class="badge-dificultad <?php echo $dificultadClase; ?>">
+                                        <?php echo ucfirst($partida['dificultad']); ?>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge-puntaje <?php echo $clasesPuntaje; ?>">
+                                        <?php echo $partida['puntaje_obtenido']; ?>
+                                    </span>
+                                </td>
+                                <td><?php echo $partida['movimientos']; ?></td>
+                                <td><?php echo date('d/m/Y H:i', strtotime($partida['fecha'])); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -268,6 +334,13 @@ require_once './layout/navbar.php';
                 url: 'https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'
             },
             responsive: true
+        });
+        
+        $('#tablaPartidas').DataTable({
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'
+            },
+            responsive: true,
         });
     });
 </script>
