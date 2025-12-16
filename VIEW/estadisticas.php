@@ -101,10 +101,12 @@ require_once './layout/navbar.php';
 <link rel="stylesheet" href="../ASSETS/css/estadisticas.css?v=2">
 
 <div class="container stats-container">
-    <div class="text-center mt-4 mb-5">
+    <div class="text-center mt-4 mb-4">
         <h1 class="display-4 fw-bold mb-3" style="color: #333;">
             Estadísticas
         </h1>
+
+
     </div>
 
     <div class="row g-4">
@@ -190,8 +192,18 @@ require_once './layout/navbar.php';
     </div>
 
 
+    <div class="quick-nav-buttons">
 
-    <div class="ranking-card mt-4">
+        <a href="#todosEstudiantes" class="btn-quick-nav">
+             Todos los Estudiantes
+        </a>
+        <a href="#partidas" class="btn-quick-nav">
+             Partidas
+        </a>
+    </div>
+
+
+    <div id="top10" class="ranking-card mt-4">
         <div class="ranking-header">
             <h3 class="mb-0"><i class="fas fa-trophy me-2"></i>Top 10 Jugadores</h3>
         </div>
@@ -242,7 +254,7 @@ require_once './layout/navbar.php';
         </div>
     </div>
 
-    <div class="ranking-card mt-5">
+    <div id="todosEstudiantes" class="ranking-card mt-5">
         <div class="ranking-header">
             <h3 class="mb-0"><i class="fas fa-users me-2"></i>Todos los Estudiantes</h3>
         </div>
@@ -273,7 +285,7 @@ require_once './layout/navbar.php';
     </div>
 
     <!-- Tabla de Partidas -->
-    <div class="ranking-card mt-5">
+    <div id="partidas" class="ranking-card mt-5">
         <div class="ranking-header">
             <h3 class="mb-0"><i class="bi bi-controller me-2"></i><?php echo $rol === 'admin' ? 'Todas las Partidas' : 'Mis Partidas'; ?></h3>
         </div>
@@ -294,7 +306,7 @@ require_once './layout/navbar.php';
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($listaPartidas as $i => $partida): 
+                        <?php foreach ($listaPartidas as $i => $partida):
                             $clasesPuntaje = $partida['puntaje_obtenido'] < 0 ? 'puntaje-negativo' : 'puntaje-positivo';
                             $dificultadClase = 'dificultad-' . strtolower($partida['dificultad']);
                         ?>
@@ -335,7 +347,7 @@ require_once './layout/navbar.php';
             },
             responsive: true
         });
-        
+
         $('#tablaPartidas').DataTable({
             language: {
                 url: 'https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'

@@ -14,10 +14,10 @@
   min-height: 150px;
 }
 
-.stat-card:hover {
+/* .stat-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
+} */
 
 .stat-card-header {
   display: flex;
@@ -395,6 +395,45 @@
 
 .paginate_button:hover {
     background: #e9ecef;
+}
+
+/* Botones de navegación rápida */
+.quick-nav-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    
+}
+
+.btn-quick-nav {
+    background: #00a86b;
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.btn-quick-nav:hover {
+    background: #008c5a;
+    color: white;
+    
+}
+
+.btn-quick-nav i {
+    font-size: 1.2rem;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Responsive para tablas */
